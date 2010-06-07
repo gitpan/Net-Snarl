@@ -12,11 +12,11 @@ Net::Snarl - Snarl network protocol
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use constant SNARL_PORT           => 9887;
 use constant SNARL_PROTO_VERSION  => '1.0';
@@ -40,8 +40,6 @@ sub _send {
   my $data = 'type=SNP#?version=' . Net::Snarl::SNARL_PROTO_VERSION . '#?' . 
     join('#?', map "$_=$param{$_}", keys %param);
     
-  print "> $data\n";
-    
   $self->{socket}->print("$data\x0d\x0a");
   $self->_recv;  
 }
@@ -51,8 +49,6 @@ sub _recv {
   
   my $data = $self->{socket}->getline();
   chomp $data;
-  
-  print "< $data\n";
   
   my ($header, $version, $code, $desc, @rest) = split /\//, $data;
   
