@@ -12,26 +12,29 @@ Net::Snarl - Snarl network protocol
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use constant SNARL_PORT           => 9887;
 use constant SNARL_PROTO_VERSION  => '1.0';
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
+  use Net::Snarl;
+  
+  # connect to localhost and register Net::Snarl application
+  my $snarl = Net::Snarl->new('Net::Snarl');
+  $snarl->add_class('Test'); # add Test notification class
+  $snarl->notify('Test', 'Hello', 'World', 5); # show hello world for 5 seconds
 
-Perhaps a little code snippet.
+=head1 DESCRIPTION
 
-    use Net::Snarl;
-
-    my $foo = Net::Snarl->new();
-    ...
-
+A simple interface to send Snarl notifications across the network.  Snarl must 
+be running on the target machine.  
+    
 =cut
 
 sub _send {
@@ -54,6 +57,7 @@ sub _recv {
   
   die "Unexpected response: $data" unless $header eq 'SNP';
   
+  # hackishly disregard responses above 300
   if ($code >= 300) {
     push @{$self->{queue}}, [$code, $desc, @rest];
     return $self->_recv;
@@ -62,7 +66,7 @@ sub _recv {
   return $code, $desc, @rest;
 }
     
-=head1 SUBROUTINES/METHODS
+=head1 INTERFACE
 
 =head2 register($application, $host, $port)
 
@@ -87,7 +91,7 @@ sub register {
   
   my ($result, $text) = $self->_send(
     action => 'register', 
-    app => $application
+    app => $application,
   );
   
   die "Unable to register: $text" if $result;
@@ -153,51 +157,24 @@ sub DESTROY {
   );
 }
 
+=head1 BUGS
+
+Please report any bugs or feature requests to C<bug-net-snarl at rt.cpan.org>, 
+or through the web interface at 
+L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Net-Snarl>.  I will be 
+notified, and then you'll automatically be notified of progress on your bug as 
+I make changes.
+
+=head1 TODO
+
+Later versions of Snarl report interactions with the notifications back to the
+socket.  Currently these are stored in a private queue.  Eventually, I will 
+expose an interface for triggering callbacks on these events but that will
+most likely require threading so I'm a little reluctant to implement it.
+
 =head1 AUTHOR
 
 Alan Berndt, C<< <alan at eatabrick.org> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-net-snarl at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Net-Snarl>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-
-
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Net::Snarl
-
-
-You can also look for information at:
-
-=over 4
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Net-Snarl>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Net-Snarl>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Net-Snarl>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Net-Snarl/>
-
-=back
-
-
-=head1 ACKNOWLEDGEMENTS
-
 
 =head1 LICENSE AND COPYRIGHT
 

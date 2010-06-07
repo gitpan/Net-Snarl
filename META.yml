@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Net-Snarl
-version:            0.02
+version:            0.03
 abstract:           Snarl network protocol
 author:
     - Alan Berndt <alan@eatabrick.org>
