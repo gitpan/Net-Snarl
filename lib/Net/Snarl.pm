@@ -12,11 +12,11 @@ Net::Snarl - Snarl network protocol
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use constant SNARL_PORT           => 9887;
 use constant SNARL_PROTO_VERSION  => '1.0';
@@ -174,7 +174,7 @@ most likely require threading so I'm a little reluctant to implement it.
 
 =head1 AUTHOR
 
-Alan Berndt, C<< <alan at eatabrick.org> >>
+Alan Berndt, C<< <alan@eatabrick.org> >>
 
 =head1 LICENSE AND COPYRIGHT
 

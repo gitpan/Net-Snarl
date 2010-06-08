@@ -14,10 +14,6 @@ WriteMakefile(
     PREREQ_PM => {
         'Test::More' => 0,
     },
-    dist                => { 
-      COMPRESS  => 'gzip -9f', 
-      SUFFIX    => 'gz', 
-      TARFLAGS  => '--mode=644 -c -v -f',
-    },
+    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz' },
     clean               => { FILES => 'Net-Snarl-*' },
 );
