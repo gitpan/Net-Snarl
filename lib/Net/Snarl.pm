@@ -12,14 +12,14 @@ Net::Snarl - Snarl network protocol
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use constant SNARL_PORT           => 9887;
-use constant SNARL_PROTO_VERSION  => '1.0';
+use constant SNARL_PROTO_VERSION  => '1.1';
 
 =head1 SYNOPSIS
 
@@ -122,14 +122,15 @@ sub add_class {
   die "Unable to add class: $text" if $result;
 }
 
-=head2 notify($class, $title, $text, $timeout)
+=head2 notify($class, $title, $text, $timeout, $icon)
 
-Displays a notification of the specified class.  Timeout defaults to 0 (sticky).
+Displays a notification of the specified class.  Timeout defaults to 0 (sticky)
+and icon defaults to nothing.
 
 =cut
 
 sub notify {
-  my ($self, $class, $title, $text, $timeout) = @_;
+  my ($self, $class, $title, $text, $timeout, $icon) = @_;
   
   croak 'Cannot call notify as a class method' unless ref $self;
   croak 'Class name required' unless $class;
@@ -143,6 +144,7 @@ sub notify {
     title   => $title,
     text    => $text,
     timeout => $timeout || 0,
+    icon    => $icon || '',
   );
   
   die "Unable to send notification: $rtext" if $result;
