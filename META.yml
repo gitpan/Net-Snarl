@@ -19,4 +19,4 @@ requires:
 resources:
   homepage: https://github.com/bentglasstube/Net-Snarl/
   repository: git://github.com/bentglasstube/Net-Snarl.git
-version: 1.06
+version: 1.07
