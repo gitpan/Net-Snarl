@@ -1,7 +1,7 @@
 ## no critic
 package Net::Snarl;
 {
-  $Net::Snarl::VERSION = '1.07';
+  $Net::Snarl::VERSION = '1.08';
 }
 ## use critic
 
@@ -17,7 +17,7 @@ Net::Snarl - Snarl network protocol
 
 =head1 VERSION
 
-version 1.07
+version 1.08
 
 =cut
 

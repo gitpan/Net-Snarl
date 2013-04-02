@@ -23,9 +23,10 @@ my %WriteMakefileArgs = (
   "NAME" => "Net::Snarl",
   "PREREQ_PM" => {
     "Carp" => 0,
-    "IO::Socket" => 0
+    "IO::Socket" => 0,
+    "ReadOnly" => 0
   },
-  "VERSION" => "1.07",
+  "VERSION" => "1.08",
   "test" => {
     "TESTS" => "t/*.t"
   }
