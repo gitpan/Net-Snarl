@@ -1,5 +1,5 @@
 ---
-abstract: '...'
+abstract: 'Network library for Snarl'
 author:
   - 'Alan Berndt <alan@eatabrick.org>'
 build_requires:
@@ -16,8 +16,8 @@ name: Net-Snarl
 requires:
   Carp: 0
   IO::Socket: 0
-  ReadOnly: 0
+  Readonly: 0
 resources:
   homepage: https://github.com/bentglasstube/Net-Snarl/
   repository: git://github.com/bentglasstube/Net-Snarl.git
-version: 1.08
+version: 1.09

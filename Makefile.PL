@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "...",
+  "ABSTRACT" => "Network library for Snarl",
   "AUTHOR" => "Alan Berndt <alan\@eatabrick.org>",
   "BUILD_REQUIRES" => {
     "Test::More" => 0
@@ -24,9 +24,9 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Carp" => 0,
     "IO::Socket" => 0,
-    "ReadOnly" => 0
+    "Readonly" => 0
   },
-  "VERSION" => "1.08",
+  "VERSION" => "1.09",
   "test" => {
     "TESTS" => "t/*.t"
   }
