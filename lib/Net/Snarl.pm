@@ -1,7 +1,7 @@
 ## no critic
 package Net::Snarl;
 {
-  $Net::Snarl::VERSION = '1.09'; # TRIAL
+  $Net::Snarl::VERSION = '1.09';
 }
 ## use critic
 
