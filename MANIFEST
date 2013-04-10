@@ -1,12 +1,13 @@
+Build.PL
+Changes
 LICENSE
 MANIFEST
+META.json
 META.yml
-Makefile.PL
 README
+cpanfile
 dist.ini
 lib/Net/Snarl.pm
 t/00-load.t
 t/01-actions.t
-t/author-critic.t
-t/release-pod-coverage.t
 t/release-pod-syntax.t

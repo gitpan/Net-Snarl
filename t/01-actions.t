@@ -1,5 +1,3 @@
-#!perl -T
-
 use Test::More skip_all => 'Requires human verification';
 use Net::Snarl;
 

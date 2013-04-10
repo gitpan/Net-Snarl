@@ -1,27 +1,20 @@
-## no critic
 package Net::Snarl;
-{
-  $Net::Snarl::VERSION = '1.09';
-}
-## use critic
 
 use strict;
 use warnings;
+use 5.008;
+our $VERSION = 1.10;
 
-use IO::Socket;
 use Carp;
+use IO::Socket;
+use Readonly;
 
 =head1 NAME
 
 Net::Snarl - Snarl network protocol
 
-=head1 VERSION
-
-version 1.09
-
 =cut
 
-use Readonly;
 Readonly my $SNARL_PORT           => 9887;
 Readonly my $SNARL_PROTO_VERSION  => '1.1';
 
@@ -198,4 +191,4 @@ See http://dev.perl.org/licenses/ for more information.
 
 =cut
 
-1; # End of Net::Snarl
+1;
