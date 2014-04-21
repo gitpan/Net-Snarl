@@ -4,9 +4,9 @@
       "Alan Berndt, C<< <alan@eatabrick.org> >>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Milla version v1.0.0, Dist::Zilla version 4.300033, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Milla version v1.0.4, Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.120921",
    "license" : [
-      "bsd"
+      "mit"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -26,7 +26,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build::Tiny" : "0.014"
+            "Module::Build::Tiny" : "0.035"
          }
       },
       "develop" : {
@@ -60,6 +60,6 @@
          "web" : "https://github.com/bentglasstube/Net-Snarl"
       }
    },
-   "version" : "1.10"
+   "version" : "1.1"
 }
 

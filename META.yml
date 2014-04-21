@@ -5,10 +5,10 @@ author:
 build_requires:
   Test::More: 0.88
 configure_requires:
-  Module::Build::Tiny: 0.014
+  Module::Build::Tiny: 0.035
 dynamic_config: 0
-generated_by: 'Dist::Milla version v1.0.0, Dist::Zilla version 4.300033, CPAN::Meta::Converter version 2.120921'
-license: bsd
+generated_by: 'Dist::Milla version v1.0.4, Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.120921'
+license: mit
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -30,4 +30,4 @@ resources:
   bugtracker: https://github.com/bentglasstube/Net-Snarl/issues
   homepage: https://github.com/bentglasstube/Net-Snarl
   repository: https://github.com/bentglasstube/Net-Snarl.git
-version: 1.10
+version: 1.1
